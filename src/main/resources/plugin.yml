@@ -1,9 +1,8 @@
 name: PotionZZ
-version: '${project.version}'
+version: '1.21'
 main: org.zzii.potionzz.PotionZZ
-author: ZZII
+author: NikitaBerg
+website: https://nikitaberg.ru
 commands:
   zpotion:
     permission: zpotion.give
-
-

@@ -66,7 +66,7 @@ public class GivePotion implements CommandExecutor {
                 meta.setColor(rgbToColor(color));
             }
             if (hideAttributes) {
-                meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_POTION_EFFECTS);
+                meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
             }
 
             for (String effectString : effects) {
@@ -75,8 +75,9 @@ public class GivePotion implements CommandExecutor {
                     PotionEffectType type = PotionEffectType.getByName(effectData[0]);
                     if (type != null) {
                         int amplifier = Integer.parseInt(effectData[1]);
-                        int duration = Integer.parseInt(effectData[2]);
-                        meta.addCustomEffect(new PotionEffect(type, duration, amplifier), true);
+                        int durationSeconds = Integer.parseInt(effectData[2]);
+                        int durationTicks = durationSeconds * 20;
+                        meta.addCustomEffect(new PotionEffect(type, durationTicks, amplifier), true);
                     }
                 }
             }

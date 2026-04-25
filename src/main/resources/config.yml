@@ -1,12 +1,3 @@
-# _____   ____ _______ _____ ____  _   _ ____________
-# |  __ \ / __ \__   __|_   _/ __ \| \ | |___  /___  /
-# | |__) | |  | | | |    | || |  | |  \| |  / /   / /
-# |  ___/| |  | | | |    | || |  | | . ` | / /   / /
-# | |    | |__| | | |   _| || |__| | |\  |/ /__ / /__
-# |_|     \____/  |_|  |_____\____/|_| \_/_____/_____|
-
-# Связаться с разработчиком: @zzrtk {TG}
-
 # Подсказки:
 # Формат: ЭФФЕКТ:УРОВЕНЬ:ДЛИТЕЛЬНОСТЬ_В_СЕКУНДАХ
 # Пример: SPEED:1:15 = Скорость II на 15 секунд
@@ -16,15 +7,15 @@
 # 🔹 Версии 1.8+
 # - "SPEED:1:10"              # Скорость II
 # - "SLOW:0:10"               # Замедление I
-# - "FAST_DIGGING:0:10"       # Спешка (Haste)
-# - "SLOW_DIGGING:0:10"       # Утомление (Fatigue)
-# - "INCREASE_DAMAGE:1:10"    # Сила II
-# - "HEAL:0:1"                # Мгновенное лечение I
-# - "HARM:0:1"                # Моментальный урон I
-# - "JUMP:1:10"               # Прыгучесть II
+# - "HASTE:0:10"              # Спешка
+# - "MINING_FATIGUE:0:10"     # Утомление
+# - "STRENGTH:1:10"           # Сила II
+# - "INSTANT_HEALTH:0:1"      # Мгновенное лечение I
+# - "INSTANT_DAMAGE:0:1"      # Моментальный урон I
+# - "JUMP_BOOST:1:10"         # Прыгучесть II
 # - "NAUSEA:0:5"              # Тошнота
 # - "REGENERATION:1:10"       # Регенерация II
-# - "DAMAGE_RESISTANCE:0:10"  # Сопротивление урону
+# - "RESISTANCE:0:10"         # Сопротивление урону
 # - "FIRE_RESISTANCE:0:10"    # Огнестойкость
 # - "WATER_BREATHING:0:10"    # Подводное дыхание
 # - "INVISIBILITY:0:10"       # Невидимость
@@ -56,38 +47,176 @@
 # 🔹 Версия 1.19+
 # - "DARKNESS:0:10"           # Темнота
 
+# 🔹 Версия 1.21+
+# - "WIND_CHARGED:0:10"       # Заряд ветра
+# - "WEAVING:0:10"            # Плетение
+# - "OOZING:0:10"             # Слизь
+# - "INFESTED:0:10"           # Заражение
+# - "RAID_OMEN:0:60"          # Знамение рейда
+# - "TRIAL_OMEN:0:60"         # Знамение испытания
+
 
 potions:
-  leto:
-    name: "&e&lОТВАР ЛЕТО"
+  bablgam:
+    name: "&fЭликсир &dБабл-Гам&f "
     lore:
       - ""
-      - "&e▸ &fСопротивление I &7(&e1:00&7)"
-      - "&e▸ &fРегенерация I &7(&e1:00&7)"
-      - ""
+      - "&fСопротивление I &7(1:00)"
+      - "&fПрилив здоровья II &7(1:00)"
+      - "&fРегенерация II &7(0:18)"
     color: "253,245,0"
     hideAttributes: true
-    splash_potion: false # питьевое зелье
+    splash_potion: false
     effects:
-      - "DAMAGE_RESISTANCE:0:60" # 1 лвл : на 1 минуту
-      - "REGENERATION:0:60" # 0:60 - 1 лвл : на 1 минуту
-  vedma:
-    name: "&8&lОТВАР ВЕДЬМЫ"
+      - "DAMAGE_RESISTANCE:0:60"
+      - "REGENERATION:1:18"
+      - "HEALTH_BOOST:1:60"
+
+  bablsplash:
+    name: "&fБутыль &dБабл-Гама&f "
     lore:
       - ""
-      - "&8▸ &fЗамедление III &7(&81:00&7)"
-      - "&8▸ &fСлепота I &f&7(&80:15&7)"
+      - "&fСопротивление I &7(1:00)"
+      - "&fПрилив здоровья II &7(1:00)"
+      - "&fРегенерация II &7(0:18)"
+    color: "253,245,0"
+    hideAttributes: true
+    splash_potion: true
+    effects:
+      - "DAMAGE_RESISTANCE:0:60"
+      - "REGENERATION:1:18"
+      - "HEALTH_BOOST:1:60"
+
+  rega:
+    name: "&fЗелье &dРегенерации"
+    lore:
       - ""
+      - "&fРегенерация III &7(0:21)"
+    color: "253,245,0"
+    hideAttributes: true
+    splash_potion: false
+    effects:
+      - "REGENERATION:2:21"
+
+  energy:
+    name: "&aЭнергетик "
+    lore:
+      - ""
+      - "&fСопротивление II &7(1:00)"
+      - "&fПрилив здоровья II &7(1:00)"
+      - "&fСкорость II &7(0:39)"
+      - "&fСуперпрыжок II &7(0:39)"
+    color: "253,245,0"
+    hideAttributes: true
+    splash_potion: true
+    effects:
+      - "DAMAGE_RESISTANCE:1:60"
+      - "SPEED:1:39"
+      - "HEALTH_BOOST:1:60"
+      - "JUMP:1:39"
+
+  kislota:
+    name: "&2Кислота "
+    lore:
+      - ""
+      - "&fОтравление I &7(1:00)"
+      - "&fМедлительность II &7(1:00)"
+      - "&fИссушение I &7(0:15)"
+      - "&fСлабость II &7(0:21)"
+    color: "253,245,0"
+    hideAttributes: true
+    splash_potion: true
+    effects:
+      - "POISON:0:60"
+      - "SLOW:2:60"
+      - "WITHER:0:15"
+      - "WEAKNESS:1:21"
+
+  silka:
+    name: "&fЗелье &6Силы III"
+    lore:
+      - ""
+      - "&fСила III &7(1:30)"
+    color: "253,245,0"
+    hideAttributes: true
+    splash_potion: false
+    effects:
+      - "INCREASE_DAMAGE:2:90"
+
+  inviz:
+    name: "&fЗелье &8Невидимости"
+    lore:
+      - ""
+      - "&fНевидимость &7(15:00)"
+    color: "253,245,0"
+    hideAttributes: true
+    splash_potion: false
+    effects:
+      - "INVISIBILITY:0:900"
+
+  skorka:
+    name: "&fЗелье &bСкорости III"
+    lore:
+      - ""
+      - "&fСкорость III &7(1:30)"
+    color: "253,245,0"
+    hideAttributes: true
+    splash_potion: false
+    effects:
+      - "SPEED:2:90"
+
+  otrizka:
+    name: "&fЗелье &2Отрыжки"
+    lore:
+      - ""
+      - "&cЗамедление III &7(0:35)"
+      - "&cСлепота I &7(0:15)"
+      - "&cИссушение V &7(0:10)"
+      - "&cГолод X &7(1:00)"
+      - "&cСлабость III &7(1:00)"
     color: "105,105,105"
     hideAttributes: true
-    splash_potion: true # взрывчатое зелье
+    splash_potion: true
     effects:
-      - "SLOW:2:60" # 3 лвл : на 1 минуту
-      - "BLINDNESS:0:15" # 1 лвл : на 15 секунд
+      - "SLOW:2:35"
+      - "BLINDNESS:0:15"
+      - "WITHER:4:10"
+      - "HUNGER:9:60"
+      - "WEAKNESS:2:60"
+
+  pobedilka:
+    name: "&fЗелье &aПобедителя"
+    lore:
+      - ""
+      - "&fСопротивление II &7(1:00)"
+      - "&fПрилив здоровья II &7(1:00)"
+      - "&fСкорость II &7(0:39)"
+      - "&fНевидимость I &7(15:00)"
+    color: "105,105,105"
+    hideAttributes: true
+    splash_potion: true
+    effects:
+      - "DAMAGE_RESISTANCE:1:60"
+      - "SPEED:1:39"
+      - "HEALTH_BOOST:1:60"
+      - "INVISIBILITY:0:900"
+
+  killerka:
+    name: "&fЗелье &4Киллера"
+    lore:
+      - ""
+      - "&fСила IV &7(1:00)"
+      - "&fСопротивление II &7(1:00)"
+    color: "105,105,105"
+    hideAttributes: true
+    splash_potion: true
+    effects:
+      - "INCREASE_DAMAGE:3:60"
+      - "DAMAGE_RESISTANCE:1:60"
 messages:
-  no_permission: "&6&l(ЗЕЛЬЯ) &fУ вас нет &6прав&f для использования этой &6команды.."
-  usage: "&6&l(ЗЕЛЬЯ) &fИспользование: &6/zpotion give <игрок> <зелье>"
-  unknown_command: "&6&l(ЗЕЛЬЯ) &fНеизвестная &6команда."
-  player_not_found: "&6&l(ЗЕЛЬЯ) &fИгрок не &6найден."
-  potion_not_found: "&6&l(ЗЕЛЬЯ) &fЗелье не &6найдено."
-  potion_received: "&6&l(ЗЕЛЬЯ) &fВы &6получили&f %potion%."
+  no_permission: "&f[&9LC&f] У вас нет &9прав&f для использования этой &9команды"
+  usage: "&f[&9LC&f] &fИспользование: &9/zpotion give <игрок> <зелье>"
+  unknown_command: "&f[&9LC&f] &fНеизвестная &9команда"
+  player_not_found: "&f[&9LC&f] &fИгрок не &9найден"
+  potion_not_found: "&f[&9LC&f] &fЗелье не &9найдено"
+  potion_received: "&f[&9LC&f] &fВы &9получили&f %potion%"
